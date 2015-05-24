@@ -1,14 +1,13 @@
 ##
 ##  1. Merges the training and the test sets to create one data set
 ##  2. Extracts only the measurements on the mean and standard deviation for each measurement
-##  3. Uses descriptive activity names to name the activities in the data set + Appropriately labels
-##     the data set with descriptive variable names
-##  4. From the data set in previous step, creates a second, independent tidy data set
+##  3. Uses descriptive activity names in the data set + Adding labels
+##  4. From the data set in previous step, creates a tidy data set
 ##     with the average of each variable for each activity and each subject
 ##
 ## 
 
-## INITIALIZE packages & declare dependencies
+## INITIALIZE packages
 if (!require("data.table")) {
   install.packages("data.table")
 }
@@ -151,13 +150,7 @@ DT_HAR_data <- merge (DT_HAR_data,
 DT_HAR_data[, act_id := NULL] 
 DT_HAR_data[, id_seq := NULL] 
 
-## Clean
-#rm(DT_HAR_feat)
-#rm(DT_act_labels)
-#rm(DT_act_data)
-#rm(DT_feat_col_to_remove)
-#rm(DT_feat_labels)
-#rm(feat_col_to_remove)
+
 ##
 ## Step 4 - From the data set in previous step, creates a tidy dataset
 ##
